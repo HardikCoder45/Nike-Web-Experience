@@ -1,0 +1,7 @@
+# Vercel upload set: the shipped site only.
+# tools/ holds the Blender generator (48 MB) and a 56 MB node_modules tree used
+# for asset optimisation — none of it belongs in the deployment.
+tools/
+.git/
+.gitignore
+*.log
