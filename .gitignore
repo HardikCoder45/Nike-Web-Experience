@@ -1,0 +1,7 @@
+# build tooling dependencies
+tools/gltf/node_modules/
+tools/gltf/package-lock.json
+
+# regenerable build artifacts (see tools/build.sh)
+tools/source/
+tools/preview_*.png

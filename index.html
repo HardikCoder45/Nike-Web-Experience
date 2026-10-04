@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NIKE AIR MAX PHANTOM — Engineered To Disappear</title>
+<meta name="description" content="NIKE Air Max Phantom. Full-length encapsulated air, a 38mm stack and an engineered knit upper. Explore the anatomy in 3D and build your colorway.">
+<meta name="theme-color" content="#08090b">
+<meta property="og:title" content="NIKE Air Max Phantom">
+<meta property="og:description" content="Engineered to disappear. Explore the anatomy in 3D.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308090b'/%3E%3Cpath d='M4 24c4 0 6-2 7-5 .8-2 1.7-3.4 3-3.4 1 0 1.4.9 1 2.2-.5 1.6-2 3.3-2 3.3s1.6-1 3.2-2.6c1.4-1.7 2.7-3.7 4-3.7 1.3 0 1.7 1.5 1 3.1-.6 1.6-1.7 3.4-1.7 3.4s2.4-1.5 4.2-3c1.2-1 2.3-1.7 3-1.7 1.3 0 1.7 1.5 1 3.2 0 0-2 2-4 3.6-2 1.5-3.7 2.4-5.7 2.4z' fill='%23d7ff2f'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/models/phantom-runner.glb" as="fetch" type="model/gltf-binary" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./assets/vendor/three/build/three.module.js",
+    "three/addons/": "./assets/vendor/three/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- one fixed WebGL stage behind the whole page -->
+<canvas id="stage" class="stage-fixed" aria-hidden="true"></canvas>
+
+<!-- ─────────────────────────── loader ─────────────────────────── -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <div class="loader__inner">
+    <div class="loader__mark">NIKE</div>
+    <div class="loader__track"><i id="loaderBar"></i></div>
+    <div class="loader__meta"><span id="loaderPct">0%</span><span id="loaderMsg">Loading geometry</span></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── nav ─────────────────────────── -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Nike home">
+    <svg viewBox="0 0 34 24" aria-hidden="true" focusable="false"><path d="M0 20.2C6.1 20.2 9.6 17.4 12.2 12.6c1.3-2.4 2.6-5 4.6-5 1.7 0 2.3 1.7 1.6 3.6-.9 2.4-3.1 5-3.1 5s2.4-1.5 4.9-4.6c2.2-2.7 4.2-5.8 6.4-5.8 2 0 2.6 2.4 1.6 5-.9 2.4-2.6 5.2-2.6 5.2s3.6-2.2 6.4-4.4C34 9.4 34 8 32.7 8c-1.6 0-4.6 1.4-7.9 3.2 1.2-1.6 1.9-3.2 1.6-4.3-.4-1.4-1.8-2.1-3.4-2.1C17.7 4.8 12 12 9 16.4 6.6 19.7 3.6 20.2 0 20.2Z"/></svg>
+    <span>NIKE</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#anatomy">Anatomy</a>
+    <a href="#tech">Technology</a>
+    <a href="#colorway">Colorway</a>
+    <a href="#story">Story</a>
+  </nav>
+  <div class="nav__actions">
+    <button class="btn btn--ghost nav__cart" id="cartBtn" aria-expanded="false" aria-controls="cart">
+      Bag <span class="pill" id="cartCount">0</span>
+    </button>
+    <button class="btn btn--solid" data-scroll="#buy">Buy</button>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="nav__sheet" id="sheet">
+  <a href="#anatomy">Anatomy</a><a href="#tech">Technology</a>
+  <a href="#colorway">Colorway</a><a href="#story">Story</a>
+</div>
+
+<main id="main">
+
+<!-- ─────────────────────────── hero ─────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__veil"></div>
+
+  <div class="hero__grid">
+    <p class="hero__eyebrow"><span class="tick"></span>Air Max Phantom — SS26</p>
+    <h1 class="hero__title">
+      <span class="line"><span>Engineered</span></span>
+      <span class="line"><span>To <em>Disappear</em></span></span>
+    </h1>
+    <p class="hero__lede">A full-length air platform that hides the force it generates. 38&nbsp;mm of stack, one continuous knit, zero wasted gram.</p>
+    <div class="hero__cta">
+      <button class="btn btn--solid btn--lg" data-scroll="#buy">Shop Phantom</button>
+      <button class="btn btn--line btn--lg" data-scroll="#anatomy">See the anatomy</button>
+    </div>
+    <dl class="hero__facts">
+      <div><dt>Energy return</dt><dd data-count="87" data-suffix="%">0%</dd></div>
+      <div><dt>Stack height</dt><dd data-count="38" data-prefix="" data-suffix="mm">0mm</dd></div>
+      <div><dt>Weight (US 9)</dt><dd data-count="248" data-suffix="g">0g</dd></div>
+    </dl>
+  </div>
+
+  <div class="hero__hint" id="dragHint">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 5 9m0 0 4-4M5 9h14M15 19l4-4m0 0-4 4m4-4H5"/></svg>
+    Drag to orbit
+  </div>
+  <div class="hero__scroll"><i></i>Scroll to dissect</div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__row" id="ticker"></div></div>
+
+<!-- ─────────────────────── anatomy / exploded ─────────────────────── -->
+<section class="anatomy" id="anatomy">
+  <header class="sec-head">
+    <p class="sec-head__num">01 — Anatomy</p>
+    <h2 class="sec-head__title">Six parts.<br>One <em>platform</em>.</h2>
+    <p class="sec-head__lede">Scroll to take it apart. Every layer is load-bearing, and every gram is accounted for.</p>
+  </header>
+
+  <div class="anatomy__viewport">
+    <ul class="hotspots" id="hotspots">
+      <li class="hotspot" data-part="UNIT_OUTSOLE" data-ox="-196" data-oy="-26"><b>01</b><span>Rubber outsole<em>Waffle-mapped traction, 4mm lugs</em></span></li>
+      <li class="hotspot" data-part="UNIT_MIDSOLE" data-ox="198" data-oy="18"><b>02</b><span>Foam midsole<em>Nitrogen-infused supercritical EVA</em></span></li>
+      <li class="hotspot" data-part="UNIT_AIR" data-ox="204" data-oy="58"><b>03</b><span>Air unit<em>Full-length encapsulated nitrogen</em></span></li>
+      <li class="hotspot" data-part="UPPER_MAIN" data-ox="-192" data-oy="-56"><b>04</b><span>Engineered knit<em>Zoned density, 41g per shoe</em></span></li>
+      <li class="hotspot" data-part="OVERLAY_HEEL" data-ox="184" data-oy="-70"><b>05</b><span>Heel clip<em>Rigid TPU, 0.9mm wall</em></span></li>
+      <li class="hotspot" data-part="DETAIL_LACES" data-ox="-178" data-oy="-96"><b>06</b><span>Flyknit lacing<em>Direct-thread, zero eyelet</em></span></li>
+    </ul>
+    <div class="anatomy__bar">
+      <button class="btn btn--line" id="explodeToggle" aria-pressed="false">Explode view</button>
+      <div class="anatomy__track" role="presentation"><i id="explodeBar"></i></div>
+      <span class="anatomy__readout" id="explodeVal">0%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── tech ─────────────────────────── -->
+<section class="tech" id="tech">
+  <header class="sec-head sec-head--left">
+    <p class="sec-head__num">02 — Technology</p>
+    <h2 class="sec-head__title">Pressure you<br>can't <em>see</em>.</h2>
+  </header>
+
+  <div class="tech__grid">
+    <article class="card">
+      <span class="card__idx">A</span>
+      <h3>Full-length air</h3>
+      <p>One sealed nitrogen bladder runs heel to toe under the foam. It never breaks down because there is nothing inside it to break down.</p>
+      <div class="card__metric"><span data-count="320" data-suffix="ml">0ml</span><em>total volume</em></div>
+    </article>
+    <article class="card">
+      <span class="card__idx">B</span>
+      <h3>Supercritical foam</h3>
+      <p>Nitrogen dissolved into EVA under pressure. The result is lighter, springier and far less prone to bottoming out over distance.</p>
+      <div class="card__metric"><span data-count="87" data-suffix="%">0%</span><em>energy return</em></div>
+    </article>
+    <article class="card">
+      <span class="card__idx">C</span>
+      <h3>Zoned knit</h3>
+      <p>Open where your foot flexes, dense where it needs support. The upper is knitted in one piece, so there are no seams to chafe.</p>
+      <div class="card__metric"><span data-count="41" data-suffix="g">0g</span><em>per shoe</em></div>
+    </article>
+  </div>
+
+  <div class="tech__compare">
+    <div class="cmp">
+      <h4>Heel-to-toe drop</h4>
+      <div class="cmp__row"><span>Phantom</span><i style="--w:14%"></i><b>10mm</b></div>
+      <div class="cmp__row"><span class="is-dim">Category avg.</span><i class="is-dim" style="--w:24%"></i><b class="is-dim">17mm</b></div>
+    </div>
+    <div class="cmp">
+      <h4>Stack height</h4>
+      <div class="cmp__row"><span>Phantom</span><i style="--w:38%"></i><b>38mm</b></div>
+      <div class="cmp__row"><span class="is-dim">Category avg.</span><i class="is-dim" style="--w:29%"></i><b class="is-dim">29mm</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── colorway / buy ──────────────────────── -->
+<section class="buy" id="colorway">
+  <div class="buy__veil"></div>
+
+  <div class="buy__panel">
+    <p class="sec-head__num">03 — Colorway</p>
+    <h2 class="buy__title">Build it <em>yours</em>.</h2>
+    <p class="buy__lede">Every colorway is a real-time material change on the model you're looking at. Nothing is a photo.</p>
+
+    <div class="swatches" id="swatches" role="radiogroup" aria-label="Colorway">
+      <button class="swatch is-on" role="radio" aria-checked="true" data-cw="phantom"
+        style="--a:#141518;--b:#f4f2ec;--c:#d7ff2f" title="Phantom Black / Volt">
+        <span class="swatch__name">Phantom</span></button>
+      <button class="swatch" role="radio" aria-checked="false" data-cw="bone"
+        style="--a:#e9e4d9;--b:#cfc6b6;--c:#b9b2a4" title="Bone / Sail">
+        <span class="swatch__name">Bone</span></button>
+      <button class="swatch" role="radio" aria-checked="false" data-cw="volt"
+        style="--a:#d7ff2f;--b:#141518;--c:#8ea300" title="Volt / Black">
+        <span class="swatch__name">Volt</span></button>
+      <button class="swatch" role="radio" aria-checked="false" data-cw="infrared"
+        style="--a:#f04a24;--b:#1a1013;--c:#ffb59a" title="Infrared">
+        <span class="swatch__name">Infrared</span></button>
+      <button class="swatch" role="radio" aria-checked="false" data-cw="glacier"
+        style="--a:#9fc6d8;--b:#eef4f7;--c:#4b7f95" title="Glacier">
+        <span class="swatch__name">Glacier</span></button>
+    </div>
+
+    <dl class="buy__meta">
+      <div><dt>Style</dt><dd id="mStyle">CU2320-001</dd></div>
+      <div><dt>Colorway</dt><dd id="mName">Phantom Black / Volt</dd></div>
+      <div><dt>Retail</dt><dd id="mPrice">$190</dd></div>
+    </dl>
+
+    <fieldset class="sizes">
+      <legend>Size — US Men's</legend>
+      <div class="sizes__row" id="sizes"></div>
+    </fieldset>
+
+    <button class="btn btn--solid btn--lg btn--block" id="addBtn">Add to bag</button>
+    <p class="buy__note" id="buyNote">Free shipping · 60-day returns · Members get 10% off</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────── story ─────────────────────────── -->
+<section class="story" id="story">
+  <p class="story__big" aria-hidden="true">RUN<br>THE<br>REST</p>
+  <div class="story__body">
+    <h2>The quietest<br>thing we make.</h2>
+    <p>Every generation of the Air Max has asked for more air. This one asks for less noise. The Phantom's job is to be the first thing you stop noticing — a platform that returns exactly what you give it and never announces itself doing so.</p>
+    <p>It took six prototypes to get the bladder silent. The seventh one you can buy.</p>
+    <div class="story__sig"><span>Elena Márquez</span><em>Director of Footwear Design</em></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── footer ─────────────────────────── -->
+<footer class="foot">
+  <form class="sub" id="subForm" novalidate>
+    <label for="email">Get first access to the drop</label>
+    <div class="sub__row">
+      <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="btn btn--solid" type="submit">Sign up</button>
+    </div>
+    <p class="sub__msg" id="subMsg" role="status"></p>
+  </form>
+  <nav class="foot__cols" aria-label="Footer">
+    <div><h5>Shop</h5><a href="#colorway">Men</a><a href="#colorway">Women</a><a href="#colorway">Kids</a><a href="#tech">Technology</a></div>
+    <div><h5>Support</h5><a href="#">Order status</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
+    <div><h5>Company</h5><a href="#story">Our story</a><a href="#">Careers</a><a href="#">Sustainability</a><a href="#">Press</a></div>
+  </nav>
+  <div class="foot__legal">
+    <p>© 2026 Nike — concept site built as a WebGL showcase. Not affiliated with Nike, Inc. 3D model, textures and branding are original and generated for this demonstration.</p>
+    <p class="foot__meta"><span id="perf">—</span></p>
+  </div>
+</footer>
+
+</main>
+
+<!-- ─────────────────────────── cart drawer ─────────────────────────── -->
+<aside class="cart" id="cart" aria-label="Shopping bag" aria-hidden="true">
+  <div class="cart__head">
+    <h3>Your bag</h3>
+    <button class="cart__x" id="cartClose" aria-label="Close bag">×</button>
+  </div>
+  <div class="cart__items" id="cartItems"></div>
+  <div class="cart__foot">
+    <div class="cart__total"><span>Subtotal</span><b id="cartTotal">$0</b></div>
+    <button class="btn btn--solid btn--block">Checkout</button>
+    <p class="cart__ship">Free shipping applied</p>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<noscript>
+  <div class="noscript">
+    <h2>NIKE Air Max Phantom</h2>
+    <p>This product page uses WebGL for the 3D view. With JavaScript disabled you can still read the full specification.</p>
+    <p>Full-length encapsulated air unit (320 ml), nitrogen-infused supercritical EVA midsole at 38 mm, zoned engineered knit upper at 41 g per shoe, rubber outsole with 4 mm waffle lugs, rigid TPU heel clip. $190. Free shipping and 60-day returns.</p>
+  </div>
+</noscript>
+
+<script src="assets/vendor/gsap/gsap.min.js"></script>
+<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
